@@ -20,24 +20,32 @@ curl_setopt_array($curl, array(
     "authorization: Basic c2NvdHRAaW5ub3ZhdGl2ZW11c2ljLmNvbS5hdTpWaW5uaWJlcmczIQ==",
     "cache-control: no-cache",
     "postman-token: c76ece86-cfe5-6bb1-33c2-3ed259e348ee"
-  ),
+	  ),
 ));
 
 $response = curl_exec($curl);
-/*$json = json_decode($response, true);*/
-
 
 $err = curl_error($curl);
 curl_close($curl);
-/*print_r($response);*/
 
-if ($err) {
+
+/*if ($err) {
   echo "cURL Error #:" . $err;
 } else {
   echo $response;
-}
+}*/
+
+// Will dump a beauty json :3
+$data = (json_decode($response, true));
+var_dump($data);
+
+$id=$data['id']
+
+ $data["id"] 
+        
+
 ?>
 
-
+ 
 </body>
 </html>
